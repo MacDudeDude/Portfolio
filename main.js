@@ -55,7 +55,7 @@ class Project {
           const video = document.createElement('video');
           video.src = src;
           video.autoplay = true;
-          video.poster = 'Images/VideoPlaceholder.gif';
+          video.poster = 'Images/Videos/VideoPlaceholder.gif';
           video.muted = true;
           video.loop = true;
           video.playsInline = true;
@@ -102,42 +102,89 @@ class ProjectsManager {
 const projectsManager = new ProjectsManager([
   new Project(
     'Speed Creators',
-    'A hectic party platformer for 2-200 players, where everyone builds one piece of the final level before racing through it.  \n\nDeveloped an in game level editor.  Optimized audio and object pooling.  Custom networking solution using Facepunch.Steamworks.',
+    'A multiplayer party platformer for 2-200 players, where everyone builds one piece of the final level before racing through it.\n\nIn game level editor.  Heavily optimized audio manager and object pooling.  Custom networking solution using Facepunch.Steamworks.',
     [
-      'Images/FightingGif.mp4',
-      'Images/LevelBuildingGif.mp4',
+      'Images/Videos/FightingGif.mp4',
+      'Images/Videos/LevelBuildingGif.mp4',
     ],
     [
-      'Images/Peeking1.gif',
-      'Images/Peeking2.gif',
+      'Images/Peekings/Peeking1.gif',
+      'Images/Peekings/Peeking2.gif',
     ]
   ),
   new Project(
     'Skyrail Rush',
-    'An FPS boss rush set on a self balancing monorail.  Created a custom boss and weapon system.  Made in one month for the boss rush game jam 2025.',
+    'An FPS boss rush set on a self balancing monorail.  Made in one month for the boss rush game jam 2025.  \n\nCustom multi-stage boss system utilizing the state machine pattern.  Polymorphic weapon system to handle weapons with wildly different alternate firing behaviors.',
     [
-      'Images/SkyrailRushCuts.mp4',
-      'Images/SkyrailRushSlow.mp4',
+      'Images/Videos/SkyrailRushCuts.mp4',
+      'Images/Videos/SkyrailRushSlow.mp4',
     ],
     [
-      'Images/Peeking3.gif',
-      'Images/Peeking4.gif',
+      'Images/Peekings/Peeking3.gif',
+      'Images/Peekings/Peeking4.gif',
     ]
   ),
   new Project(
     'Test Project',
     'hihihihihihihihihihihi hihihihihihihihihihihihihi hihihihihihihihihihi hihihihihihihihihihihi hihihihihihihihihihihihi',
     [
-      'Images/Nothin.mp4',
-      'Images/Nothing.mp4',
+      'Images/Videos/Nothin.mp4',
+      'Images/Videos/Nothing.mp4',
     ],
     [
-      'Images/Peeking3.gif',
-      'Images/Peeking4.gif',
+      'Images/Peekings/Peeking5.gif',
+      'Images/Peekings/Peeking6.gif',
     ]
   ),
 ]);
 
+const cursorFrames = {
+  default: {
+    frame1: "url('Images/Cursors/Cursor_Default_1.png') 8 8, auto",
+    frame2: "url('Images/Cursors/Cursor_Default_2.png') 8 8, auto",
+  },
+  pointer: {
+    frame1: "url('Images/Cursors/Cursor_Hover_1.png') 8 8, pointer",
+    frame2: "url('Images/Cursors/Cursor_Hover_2.png') 8 8, pointer",
+  },
+  text: {
+    frame1: "url('Images/Cursors/Cursor_Text_Hover_1.png') 8 8, text",
+    frame2: "url('Images/Cursors/Cursor_Text_Hover_2.png') 8 8, text",
+  },
+};
+
+function detectCursorContext(element) {
+  if (element.closest('a, button, input[type="button"], input[type="submit"], input[type="image"], [role="button"], [role="link"], [onclick]')) {
+    return 'pointer';
+  }
+
+  if (element.closest('label, textarea, input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="url"], input[type="tel"], [contenteditable="true"], p, span, h1, h2, h3, h4, h5, h6')) {
+    return 'text';
+  }
+
+  return 'default';
+}
+
+function setCursorFrames(context = 'default') {
+  const frames = cursorFrames[context] || cursorFrames.default;
+  document.documentElement.style.setProperty('--cursor-frame-1', frames.frame1);
+  document.documentElement.style.setProperty('--cursor-frame-2', frames.frame2);
+}
+
+function initCursorSystem() {
+  setCursorFrames('default');
+
+  document.addEventListener('mouseover', (event) => {
+    const context = detectCursorContext(event.target);
+    setCursorFrames(context);
+  });
+
+  document.addEventListener('mouseout', (event) => {
+    setCursorFrames('default');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initCursorSystem();
   projectsManager.render('projects-list');
 });
