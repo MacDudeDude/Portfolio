@@ -4,6 +4,17 @@
   padding: 0;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 html, body {
   min-height: 100%;
 }
@@ -26,6 +37,7 @@ body {
   justify-content: center;
   gap: 3rem;
   padding: 1rem 0 2rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .site-nav a {
@@ -37,6 +49,7 @@ body {
 .hero {
   text-align: center;
   padding-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .hero h1 {
@@ -51,7 +64,11 @@ body {
 }
 
 .content-section {
-  padding-top: 3rem;
+  padding-top: 2rem;
+}
+
+.projects-list {
+  animation: fadeInUp 0.8s ease-out 0.8s both;
 }
 
 .section-heading {
@@ -59,62 +76,77 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   border-bottom: 1px solid #111111;
-  padding-bottom: 0.5rem;
-  margin-bottom: 2rem;  
-  margin-left: 4rem;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;  
+  margin-left: 1rem;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
 .project-card {
-  outline-style: solid;
-  outline-width: 2px;
-  width: min(100%, 1240px);
+  width: 100%;
   margin: 0 auto 2.5rem;
   display: grid;
   grid-template-columns: 1.2fr 2.4fr;
   gap: 2.5rem;
   align-items: start;
-  border-bottom: 1px solid #dcdcdc;
-}
-
-.project-card:last-child {
-  border-bottom: none;
+  height: 100%;
 }
 
 .project-info h2 {
   font-size: 2.7rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-info p {
   max-width: 48rem;
   color: #333333;
+  font-size: normal;
 }
 
 .project-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   align-items: stretch;
+  height: 100%;
 }
 
 .project-thumb {
   aspect-ratio: 16 / 9;
   width: 100%;
-  background: #f4f4f4;
-  border: 1px solid #dcdcdc;
-  overflow: hidden;
+  height: 100%;
+  position: relative;
+  overflow: visible;
 }
 
-.project-thumb img {
+.project-thumb-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.project-thumb img,
+.project-thumb video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.5s, transform 0.3s;
+  z-index: 1;
+  position: relative;
+  border-radius: 10px;
 }
 
-.project-thumb:hover img {
-  transform: scale(2);
+.project-thumb:hover img,
+.project-thumb:hover video {
+  transform: translate(0, 25px);
+  z-index: 10;
+  box-shadow: 1px 1px 12px #505050;
 }
 
 @media (max-width: 900px) {
