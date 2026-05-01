@@ -104,8 +104,8 @@ const projectsManager = new ProjectsManager([
     'Speed Creators',
     'A multiplayer party platformer for 2-200 players, where everyone builds one piece of the final level before racing through it.\n\nIn game level editor.  Heavily optimized audio manager and object pooling.  Custom networking solution using Facepunch.Steamworks.',
     [
-      'Images/Videos/FightingGif.mp4',
-      'Images/Videos/LevelBuildingGif.mp4',
+      'Images/Videos/Fighting.mp4',
+      'Images/Videos/LevelBuilding.mp4',
     ],
     [
       'Images/Peekings/Peeking1.gif',
@@ -116,8 +116,8 @@ const projectsManager = new ProjectsManager([
     'Skyrail Rush',
     'FPS boss rush set on a self balancing monorail.  Made in one month for BRGJ 2025.\n\nCustom multi-stage boss system utilizing the state machine pattern.  Polymorphic weapon system to handle weapons with wildly different alternate firing behaviors.',
     [
-      'Images/Videos/Skyrailrushcuts.mp4',
-      'Images/Videos/Skyrailrushslow.mp4',
+      'Images/Videos/SkyrailRushCuts.mp4',
+      'Images/Videos/SkyrailRushSlow.mp4',
     ],
     [
       'Images/Peekings/Peeking3.gif',
