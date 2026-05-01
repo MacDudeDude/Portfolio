@@ -114,10 +114,10 @@ const projectsManager = new ProjectsManager([
   ),
   new Project(
     'Skyrail Rush',
-    'An FPS boss rush set on a self balancing monorail.  Made in one month for the boss rush game jam 2025.  \n\nCustom multi-stage boss system utilizing the state machine pattern.  Polymorphic weapon system to handle weapons with wildly different alternate firing behaviors.',
+    'FPS boss rush set on a self balancing monorail.  Made in one month for BRGJ 2025.\n\nCustom multi-stage boss system utilizing the state machine pattern.  Polymorphic weapon system to handle weapons with wildly different alternate firing behaviors.',
     [
-      'Images/Videos/SkyrailRushCuts.mp4',
-      'Images/Videos/SkyrailRushSlow.mp4',
+      'Images/Videos/Skyrailrushcuts.mp4',
+      'Images/Videos/Skyrailrushslow.mp4',
     ],
     [
       'Images/Peekings/Peeking3.gif',
@@ -125,8 +125,8 @@ const projectsManager = new ProjectsManager([
     ]
   ),
   new Project(
-    'Test Project',
-    'hihihihihihihihihihihi hihihihihihihihihihihihihi hihihihihihihihihihi hihihihihihihihihihihi hihihihihihihihihihihihi',
+    'Strato',
+    'A 3D platform fighter with a focus on movement and fluid combat.  Sole gameplay programmer on a team of 7 for a capstone project.\n\nUsing a state machine to handle player and enemy behavior.  Enforced loose coupling with events.  Handled overall asset pipeline.',
     [
       'Images/Videos/Nothin.mp4',
       'Images/Videos/Nothing.mp4',
@@ -134,6 +134,18 @@ const projectsManager = new ProjectsManager([
     [
       'Images/Peekings/Peeking5.gif',
       'Images/Peekings/Peeking6.gif',
+    ]
+  ),
+  new Project(
+    'Spider Controller',
+    'A procedural spider controller that smoothly walks on any terrain with physics interactions.  Made in 2 weeks for the Acerola Jam 0\n\nUsing inverse kinematics with unity phyiscs casts to position the body and limbs accordingly.',
+    [
+      'Images/Videos/Nothin.mp4',
+      'Images/Videos/Nothing.mp4',
+    ],
+    [
+      'Images/Peekings/Peeking7.gif',
+      'Images/Peekings/Peeking8.gif',
     ]
   ),
 ]);
