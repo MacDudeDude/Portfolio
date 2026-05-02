@@ -138,8 +138,8 @@ const projectsManager = new ProjectsManager([
     'Skyrail Rush',
     'FPS boss rush set on a self balancing monorail.  Made in one month for BRGJ 2025.\n\nCustom multi-stage boss system utilizing the state machine pattern.  Polymorphic weapon system to handle weapons with wildly different alternate firing behaviors.',
     [
-      'Graphics/Projects/SkyrailRush/SkyrailRushCuts.mp4',
-      'Graphics/Projects/SkyrailRush/SkyrailRushSlow.mp4',
+      'Graphics/Projects/SpiderController/SpiderActive.mp4',
+      'Graphics/Projects/SpiderController/SpiderActive.mp4',
     ],
     [
       'Graphics/Peekings/Peeking3.gif',
@@ -151,8 +151,8 @@ const projectsManager = new ProjectsManager([
     'Strato',
     'A 3D platform fighter with a focus on movement and fluid combat.  Sole gameplay programmer on a team of 7 for a capstone project.\n\nUsing a state machine to handle player and enemy behavior.  Enforced loose coupling with events.  Handled overall asset pipeline.',
     [
-      'Graphics/Projects/Strato/Stratocombat.mp4',
-      'Graphics/Projects/Strato/Strato.png',
+      'Graphics/Projects/SpiderController/SpiderActive.mp4',
+      'Graphics/Projects/SpiderController/SpiderActive.mp4',
     ],
     [
       'Graphics/Peekings/Peeking5.gif',
