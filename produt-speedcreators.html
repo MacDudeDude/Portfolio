@@ -9,12 +9,6 @@
 </head>
 <body>
   <div>
-    <nav class="site-nav">
-  <a href="index.html">home</a>
-  <a href="projects.html">projects</a>
-  <a href="about.html">about</a>
-  <a href="contact.html">contact</a>
-</nav>
     <div id="nav-placeholder"></div>
   
     <div class="video-container">
@@ -26,9 +20,36 @@
 
     <div>
         <header class="hero">
-          <h4>unity gameplay programmer</h4>
+          <h2>Multiplayer / Unity / 2026 / Steam</h2>
         </header>
       </div>
+
+    <div class="normal-section-heading">About</div>
+          <div class="project-divider"></div>
+    <section class="content-section">
+      <p>Speed Creators is an online multiplayer platformer built in Unity and released on Steam.  All players build a level using the custom in game level editor, using traps and movement altering blocks.  The game stiches each level together and everyone races through it all at once.</p>
+    </section>
+    <div class="project-image">
+      <video autoplay muted loop playsinline poster="Graphics/Misc/VideoPlaceholder.gif">
+        <source src="Graphics/Projects/SpeedCreators/microtrailer.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="normal-section-heading">Systems</div>
+          <div class="project-divider"></div>
+    <section class="content-section">
+      <h3>Networking</h3>
+      <p>It uses a custom networking manager in conjuction with Facepunch.Steamworks to allow for lobbies of up to 200 players.  Player data is sent based on a tick system and interpolated between ticks.  All traps are synced with a single timer to keep bandwith low.</p>
+
+      <h3>Custom Level Editor</h3>
+      <p>Since players had to send their levels during the game, I used custom serialization for extremely optimized file sizes.  This had the added benifit in making downloads and uploads to the steam workshop really fast.</p>
+
+      <h3>Optimizations</h3>
+      <p>Since I wanted huge lobbies with potentially over a hundred levels, I needed to keep preformance in mind.  Traps are culled and disabled when offscreen, and all projectiles are pooled.  Particle effects are emitted using a particle manager.</p>
+
+      <h3>Audio Manager</h3>
+      <p>I faced a problem with audio quickly, lots of traps with varying timing quickly reached the audio playback limit.  My solution was an audio manager that essentially keeps track of currently playing audio sources.  When it recieves a call to play a sound, it checks if that sound is already playing.  If it is, it checks variables such as distance, the audio clip length, and the time left on the currently playing clip.  Then it decides whether to ignore the request or play it and stop the old one.  The result is tons of traps and a variety of sounds with zero clipping.</p>
+    </section>
 
   </div>
   <script src="cursor.js"></script>
