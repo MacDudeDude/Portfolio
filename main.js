@@ -94,6 +94,11 @@ class ProjectsManager {
     container.innerHTML = '';
 
     this.projects.forEach((project) => {
+      // Add divider above each project
+      const divider = document.createElement('div');
+      divider.className = 'project-divider';
+      container.appendChild(divider);
+      
       container.appendChild(project.render());
     });
   }
@@ -128,8 +133,8 @@ const projectsManager = new ProjectsManager([
     'Strato',
     'A 3D platform fighter with a focus on movement and fluid combat.  Sole gameplay programmer on a team of 7 for a capstone project.\n\nUsing a state machine to handle player and enemy behavior.  Enforced loose coupling with events.  Handled overall asset pipeline.',
     [
-      'Images/Videos/Nothin.mp4',
-      'Images/Videos/Nothing.mp4',
+      'Images/Videos/Stratocombat.mp4',
+      'Images/Videos/Strato.png',
     ],
     [
       'Images/Peekings/Peeking5.gif',
@@ -138,7 +143,7 @@ const projectsManager = new ProjectsManager([
   ),
   new Project(
     'Spider Controller',
-    'A procedural spider controller that smoothly walks on any terrain with physics interactions.  Made in 2 weeks for the Acerola Jam 0\n\nUsing inverse kinematics with unity phyiscs casts to position the body and limbs accordingly.',
+    'A procedural spider controller that smoothly walks on any terrain with physics interactions.  Made in 2 weeks for the Acerola Jam 0.\n\nUsing inverse kinematics with unity phyiscs casts to position the body and limbs accordingly.',
     [
       'Images/Videos/Nothin.mp4',
       'Images/Videos/Nothing.mp4',
