@@ -2,7 +2,7 @@
   const placeholder = document.getElementById("nav-placeholder");
   if (!placeholder) return;
   try {
-    const res = await fetch("nav.html");
+    const res = await fetch("/NavBars/nav.html");
     placeholder.innerHTML = await res.text();
 
     const current = location.pathname.split("/").pop() || "/index.html";
