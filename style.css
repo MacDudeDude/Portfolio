@@ -260,6 +260,16 @@ input[type="image"],
   border-radius: 2px;
 }
 
+.video-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.video-link:hover .video-container {
+  opacity: 0.96;
+}
+
 .video-container {
   width: 100%;
   height: 350px;

@@ -1,0 +1,17 @@
+(async () => {
+  const placeholder = document.getElementById("foot-placeholder");
+  if (!placeholder) return;
+  try {
+    const res = await fetch("foot.html");
+    placeholder.innerHTML = await res.text();
+
+    const current = location.pathname.split("/").pop() || "index.html";
+    placeholder.querySelectorAll("a").forEach(a => {
+      if (a.getAttribute("href") === current) {
+        a.classList.add("active");
+      }
+    });
+  } catch (e) {
+    console.error("Could not load foot:", e);
+  }
+})();

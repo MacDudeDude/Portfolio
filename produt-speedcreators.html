@@ -11,10 +11,14 @@
   <div>
     <div id="nav-placeholder"></div>
   
-    <div class="video-container">
-      <video autoplay muted loop> <source src="Graphics/Projects/SpeedCreators/Fighting.mp4" type="video/mp4"> </video>
-      <img class="video-logo" src="Graphics/Projects/SpeedCreators/LibraryLogo.png" alt="Logo" width="30%"> </img>
-    </div>
+    <a class="video-link" href="https://store.steampowered.com/app/1745860/Speed_Creators/" role="link">
+      <div class="video-container">
+        <video autoplay muted loop>
+          <source src="Graphics/Projects/SpeedCreators/Fighting.mp4" type="video/mp4">
+        </video>
+        <img class="video-logo" src="Graphics/Projects/SpeedCreators/LibraryLogo.png" alt="Logo" width="30%">
+      </div>
+    </a>
     
   <div class="page-shell-project-page">
 
@@ -44,6 +48,12 @@
       <h3>Custom Level Editor</h3>
       <p>Since players had to send their levels during the game, I used custom serialization for extremely optimized file sizes.  This had the added benifit in making downloads and uploads to the steam workshop really fast.</p>
 
+<div class="project-image">
+      <video autoplay muted loop playsinline poster="Graphics/Misc/VideoPlaceholder.gif">
+        <source src="Graphics/Projects/SpeedCreators/LevelBuilding.mp4" type="video/mp4">
+      </video>
+    </div>
+
       <h3>Optimizations</h3>
       <p>Since I wanted huge lobbies with potentially over a hundred levels, I needed to keep preformance in mind.  Traps are culled and disabled when offscreen, and all projectiles are pooled.  Particle effects are emitted using a particle manager.</p>
 
@@ -52,7 +62,11 @@
     </section>
 
   </div>
+
+    <div id="foot-placeholder"></div>
+
   <script src="cursor.js"></script>
   <script src="nav-loader.js"></script>
+  <script src="foot-loader.js"></script>
 </body>
 </html>
