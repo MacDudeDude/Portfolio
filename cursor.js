@@ -1,15 +1,15 @@
 const cursorFrames = {
   default: {
-    frame1: "url('Images/Cursors/Cursor_Default_1.png') 8 8, auto",
-    frame2: "url('Images/Cursors/Cursor_Default_2.png') 8 8, auto",
+    frame1: "url('Graphics/Cursors/Cursor_Default_1.png') 8 8, auto",
+    frame2: "url('Graphics/Cursors/Cursor_Default_2.png') 8 8, auto",
   },
   pointer: {
-    frame1: "url('Images/Cursors/Cursor_Hover_1.png') 8 8, pointer",
-    frame2: "url('Images/Cursors/Cursor_Hover_2.png') 8 8, pointer",
+    frame1: "url('Graphics/Cursors/Cursor_Hover_1.png') 8 8, pointer",
+    frame2: "url('Graphics/Cursors/Cursor_Hover_2.png') 8 8, pointer",
   },
   text: {
-    frame1: "url('Images/Cursors/Cursor_Text_Hover_1.png') 8 8, text",
-    frame2: "url('Images/Cursors/Cursor_Text_Hover_2.png') 8 8, text",
+    frame1: "url('Graphics/Cursors/Cursor_Text_Hover_1.png') 8 8, text",
+    frame2: "url('Graphics/Cursors/Cursor_Text_Hover_2.png') 8 8, text",
   },
 };
 
@@ -43,3 +43,7 @@ function initCursorSystem() {
     setCursorFrames('default');
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCursorSystem();
+});
