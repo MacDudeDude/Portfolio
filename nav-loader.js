@@ -2,12 +2,10 @@
   const placeholder = document.getElementById("nav-placeholder");
   if (!placeholder) return;
   try {
-    const currentScript = document.currentScript?.src || import.meta.url;
-    const baseUrl = new URL(".", currentScript);
-    const res = await fetch(new URL("nav.html", baseUrl));
+    const res = await fetch("nav.html");
     placeholder.innerHTML = await res.text();
 
-    const current = location.pathname.split("/").pop() || "index.html";
+    const current = location.pathname.split("/").pop() || "home.html";
     placeholder.querySelectorAll("a").forEach(a => {
       if (a.getAttribute("href") === current) {
         a.classList.add("active");
