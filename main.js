@@ -110,7 +110,6 @@ class ProjectsManager {
     container.innerHTML = '';
 
     this.projects.forEach((project) => {
-      // Add divider above each project
       const divider = document.createElement('div');
       divider.className = 'project-divider';
       container.appendChild(divider);
@@ -132,7 +131,7 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking1.gif',
       'Graphics/Peekings/Peeking2.gif',
     ],
-    'produt-speedcreators.html' // Replace with actual link
+    'produt-speedcreators.html'
   ),
   new Project(
     'Skyrail Rush',
@@ -145,7 +144,7 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking3.gif',
       'Graphics/Peekings/Peeking4.gif',
     ],
-    'https://example.com/skyrail-rush' // Replace with actual link
+    'https://macdudedude.itch.io/skyrail-rush'
   ),
   new Project(
     'Strato',
@@ -158,7 +157,7 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking5.gif',
       'Graphics/Peekings/Peeking6.gif',
     ],
-    'https://example.com/strato' // Replace with actual link
+    'https://macdudedude.itch.io/cloudsomethingtesting'
   ),
   new Project(
     'Spider Controller',
@@ -171,7 +170,7 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking7.gif',
       'Graphics/Peekings/Peeking8.gif',
     ],
-    'https://example.com/spider-controller' // Replace with actual link
+    'https://macdudedude.itch.io/spider-stuff'
   ),
 ]);
 
