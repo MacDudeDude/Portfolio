@@ -138,8 +138,8 @@ const projectsManager = new ProjectsManager([
     'Skyrail Rush',
     'FPS boss rush set on a self balancing monorail.  Made in one month for BRGJ 2025.\n\nCustom multi-stage boss system utilizing the state machine pattern.  Polymorphic weapon system to handle weapons with wildly different alternate firing behaviors.',
     [
-      'Graphics/Projects/SpiderController/SpiderActive.mp4',
-      'Graphics/Projects/SpiderController/SpiderActive.mp4',
+      'Graphics/Projects/SkyrailRush/SkyrailRushCuts.mp4',
+      'Graphics/Projects/SkyrailRush/SkyrailRushSlow.mp4',
     ],
     [
       'Graphics/Peekings/Peeking3.gif',
@@ -151,8 +151,8 @@ const projectsManager = new ProjectsManager([
     'Strato',
     'A 3D platform fighter with a focus on movement and fluid combat.  Sole gameplay programmer on a team of 7 for a capstone project.\n\nUsing a state machine to handle player and enemy behavior.  Enforced loose coupling with events.  Handled overall asset pipeline.',
     [
-      'Graphics/Projects/SpiderController/SpiderActive.mp4',
-      'Graphics/Projects/SpiderController/SpiderActive.mp4',
+      'Graphics/Projects/Strato/Stratocombat.mp4',
+      'Graphics/Projects/Strato/Strato.png',
     ],
     [
       'Graphics/Peekings/Peeking5.gif',
@@ -164,7 +164,7 @@ const projectsManager = new ProjectsManager([
     'Spider Controller',
     'A procedural spider controller that smoothly walks on any terrain with physics interactions.  Made in 2 weeks for the Acerola Jam 0.\n\nUsing inverse kinematics with unity phyiscs casts to position the body and limbs accordingly.',
     [
-      'Graphics/Projects/SpiderController/Spider3rdPerson.mp4',
+      'Graphics/Projects/SpiderController/SpiderWalking.mp4',
       'Graphics/Projects/SpiderController/SpiderActive.mp4',
     ],
     [
