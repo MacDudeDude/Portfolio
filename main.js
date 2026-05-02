@@ -132,7 +132,7 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking1.gif',
       'Graphics/Peekings/Peeking2.gif',
     ],
-    'https://store.steampowered.com/app/1745860/Speed_Creators/' // Replace with actual link
+    'produt-speedcreators.html' // Replace with actual link
   ),
   new Project(
     'Skyrail Rush',
