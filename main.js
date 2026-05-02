@@ -164,8 +164,8 @@ const projectsManager = new ProjectsManager([
     'Spider Controller',
     'A procedural spider controller that smoothly walks on any terrain with physics interactions.  Made in 2 weeks for the Acerola Jam 0.\n\nUsing inverse kinematics with unity phyiscs casts to position the body and limbs accordingly.',
     [
-      'Graphics/Videos/Nothin.mp4',
-      'Graphics/Videos/Nothing.mp4',
+      'Graphics/Projects/SpiderController/Spider3rdPerson.mp4',
+      'Graphics/Projects/SpiderController/SpiderActive.mp4',
     ],
     [
       'Graphics/Peekings/Peeking7.gif',
