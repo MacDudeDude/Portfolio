@@ -15,12 +15,12 @@ class Project {
       card.setAttribute('role', 'button');
       card.setAttribute('tabindex', '0');
       card.addEventListener('click', () => {
-        window.open(this.link, '_blank');
+        window.location.href = this.link;
       });
       card.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          window.open(this.link, '_blank');
+          window.location.href = this.link;
         }
       });
     }

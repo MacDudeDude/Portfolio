@@ -84,6 +84,20 @@ input[type="image"],
   font-size: 0.98rem;
 }
 
+.site-foot {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem 0 2rem;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.site-foot a {
+  color: #444444;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
 .hero {
   text-align: center;
   padding-bottom: 0rem;
