@@ -5,8 +5,8 @@
 }
 
 :root {
-  --cursor-frame-1: url('Images/Cursors/Cursor_Default_1.png') 8 8, auto;
-  --cursor-frame-2: url('Images/Cursors/Cursor_Default_2.png') 8 8, auto;
+  --cursor-frame-1: url('Graphics/Cursors/Cursor_Default_1.png') 8 8, auto;
+  --cursor-frame-2: url('Graphics/Cursors/Cursor_Default_2.png') 8 8, auto;
 }
 
 @keyframes fadeInUp {
