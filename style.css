@@ -101,8 +101,7 @@ input[type="image"],
   transform: translateY(-50%) scale(0.5);
 }
 
-.site-nav a:hover::after,
-.site-nav a:focus::after {
+.site-nav a:hover::after {
   opacity: 1;
 }
 
@@ -128,7 +127,7 @@ input[type="image"],
 
 .hero h1 {
   font-size: clamp(3rem, 5vw, 5.5rem);
-  margin-bottom: 0.5rem;
+  margin-bottom: -10px;
   letter-spacing: -0.03em;
 }
 
@@ -138,7 +137,8 @@ input[type="image"],
 }
 
 .hero p {
-  font-size: 1.2rem;
+  margin-bottom: 5rem;
+  font-size: 1.5rem;
   color: #444444;
 }
 
@@ -207,8 +207,7 @@ input[type="image"],
   pointer-events: none;
 }
 
-.project-card:hover::before,
-.project-card:focus-within::before {
+.project-card:hover::before {
   opacity: 1;
 }
 
