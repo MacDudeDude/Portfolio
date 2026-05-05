@@ -82,6 +82,28 @@ input[type="image"],
   color: #444444;
   text-decoration: none;
   font-size: 0.98rem;
+  position: relative;
+  display: inline-block;
+}
+
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  left: -2.15rem;
+  top: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url('Graphics/Misc/HandClickRight.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.5);
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus::after {
+  opacity: 1;
 }
 
 .site-foot {
@@ -167,6 +189,27 @@ input[type="image"],
   align-items: start;
   height: auto;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  transform: translate(-175%, -50%) scale(0.8);
+  background-image: url('Graphics/Misc/HandClickRight.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-card:hover::before,
+.project-card:focus-within::before {
+  opacity: 1;
 }
 
 .project-info h2 {
