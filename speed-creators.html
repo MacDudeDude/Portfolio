@@ -73,38 +73,6 @@
   <script src="cursor.js"></script>
   <script src="nav-loader.js"></script>
   <script src="foot-loader.js"></script>
-  <script>
-    // Sidebar functionality
-    const headings = document.querySelectorAll('.normal-section-heading');
-    const sidebar = document.getElementById('sidebar');
-
-    // Populate sidebar with links
-    headings.forEach((heading) => {
-      const link = document.createElement('a');
-      link.href = `#${heading.id}`;
-      link.textContent = heading.textContent;
-      sidebar.appendChild(link);
-    });
-
-    // Intersection Observer for active state
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const link = sidebar.querySelector(`a[href="#${entry.target.id}"]`);
-        if (entry.isIntersecting) {
-          // Remove active from all
-          sidebar.querySelectorAll('a').forEach(a => a.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
-    }, observerOptions);
-
-    headings.forEach(heading => observer.observe(heading));
-  </script>
+  <script src="sidebar.js"></script>
 </body>
 </html>

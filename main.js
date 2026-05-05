@@ -131,7 +131,7 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking1.gif',
       'Graphics/Peekings/Peeking2.gif',
     ],
-    'produt-speedcreators.html'
+    'speed-creators.html'
   ),
   new Project(
     'Skyrail Rush',

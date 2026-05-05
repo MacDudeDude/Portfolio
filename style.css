@@ -298,13 +298,20 @@ input[type="image"],
   margin: 2rem auto 2rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .project-card {
     grid-template-columns: 1fr;
   }
 
   .project-gallery {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 1800px) {
+  .sidebar {
+    display: none !important;
+    visibility: hidden;
   }
 }
 
@@ -364,6 +371,7 @@ input[type="image"],
   position: sticky;
   top: 20px;
   margin-left: 20px;
+  width: 200px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -373,12 +381,12 @@ input[type="image"],
 }
 
 .sidebar a {
-  color: #444444;
+  color: #919191;
   text-decoration: none;
-  font-size: 2rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   position: relative;
-  padding-left: 1.5rem;
-  transition: color 0.3s;
+  padding-left: 3rem;
 }
 
 .sidebar a::before {
@@ -387,23 +395,18 @@ input[type="image"],
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid #444444;
-  transition: background-color 0.3s, border-color 0.3s;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url('Graphics/Misc/HandClosed.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.sidebar a:hover {
-  color: #111111;
-}
-
-.sidebar a.active {
-  color: #111111;
+.sidebar a:hover,a.active {
+  color: #333333;
 }
 
 .sidebar a.active::before {
-  background-color: #000000;
-  border-color: #000000;
+  background-image: url('Graphics/Misc/HandOpen.gif');
 }
