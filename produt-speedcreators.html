@@ -29,7 +29,7 @@
         </header>
       </div>
 
-    <div class="normal-section-heading">About</div>
+    <div class="normal-section-heading" id="about">About</div>
           <div class="project-divider"></div>
     <section class="content-section">
       <p>The idea behind this game came from a game jam.  I was playing a random submission and the level editor they had, which used an image where colors corresponded to specific objects, gave me the idea for a .io style game where you could quickly draw a level and make your friends race through it.  I wanted to use Unity so I just scrapped the web idea.  And I forgot where the end gameplay concept of seperate levels stiched together came from.</p>
@@ -42,7 +42,7 @@
       </video>
     </div>
 
-    <div class="normal-section-heading">Systems</div>
+    <div class="normal-section-heading" id="systems">Systems</div>
           <div class="project-divider"></div>
     <section class="content-section">
       <h3>Networking</h3>
@@ -66,10 +66,72 @@
 
   </div>
 
-    <div id="foot-placeholder"></div>
+  <nav class="sidebar" id="sidebar"></nav>
+
+  <div id="foot-placeholder"></div>
 
   <script src="cursor.js"></script>
   <script src="nav-loader.js"></script>
   <script src="foot-loader.js"></script>
+  <script>
+    // Sidebar functionality
+    const headings = document.querySelectorAll('.normal-section-heading');
+    const sidebar = document.getElementById('sidebar');
+
+    // Populate sidebar with links
+    headings.forEach((heading) => {
+      const link = document.createElement('a');
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      sidebar.appendChild(link);
+    });
+
+    // Intersection Observer for active state
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const link = sidebar.querySelector(`a[href="#${entry.target.id}"]`);
+        if (entry.isIntersecting) {
+          // Remove active from all
+          sidebar.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(heading => observer.observe(heading));
+
+    // Sidebar positioning
+    setTimeout(() => {
+      const video = document.querySelector('.video-container');
+      const nav = document.querySelector('.site-nav');
+      const sidebar = document.getElementById('sidebar');
+
+      const updateSidebar = () => {
+        const videoBottom = video.offsetTop + video.offsetHeight;
+        const navHeight = nav.offsetHeight;
+
+        if (window.scrollY < videoBottom) {
+          sidebar.style.position = 'absolute';
+          sidebar.style.top = (videoBottom + 20) + 'px';
+          sidebar.style.left = '2rem';
+          sidebar.style.transform = 'none';
+        } else {
+          sidebar.style.position = 'fixed';
+          sidebar.style.top = (navHeight + 20) + 'px';
+          sidebar.style.left = '2rem';
+          sidebar.style.transform = 'none';
+        }
+      };
+
+      window.addEventListener('scroll', updateSidebar);
+      updateSidebar(); // initial call
+    }, 100); // wait for nav to load
+  </script>
 </body>
 </html>
