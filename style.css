@@ -315,10 +315,16 @@ input[type="image"],
   }
 }
 
+.grid-container {
+  margin: 2rem auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
 .project-image {
   aspect-ratio: 16 / 9;
   width: 100%;
-  margin: 2rem auto;
   overflow: hidden;
   position: relative;
   border-radius: 2px;
