@@ -144,6 +144,16 @@ input[type="image"],
   white-space: nowrap;
 }
 
+.hero p1 {
+  display: block;
+  margin-top: 100px; 
+  margin-bottom: 100px;
+  font-size: 1.75rem;
+  font-variant: normal;
+  text-align: center;
+  color: #444444;
+}
+
 .content-section {
   font-size: 1.5rem;
   color: #383838;
