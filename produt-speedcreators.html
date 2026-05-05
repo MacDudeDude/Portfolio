@@ -20,6 +20,8 @@
       </div>
     </a>
     
+    <nav class="sidebar" id="sidebar"></nav>
+
   <div class="page-shell-project-page">
 
     <div>
@@ -66,8 +68,6 @@
 
   </div>
 
-  <nav class="sidebar" id="sidebar"></nav>
-
   <div id="foot-placeholder"></div>
 
   <script src="cursor.js"></script>
@@ -105,33 +105,6 @@
     }, observerOptions);
 
     headings.forEach(heading => observer.observe(heading));
-
-    // Sidebar positioning
-    setTimeout(() => {
-      const video = document.querySelector('.video-container');
-      const nav = document.querySelector('.site-nav');
-      const sidebar = document.getElementById('sidebar');
-
-      const updateSidebar = () => {
-        const videoBottom = video.offsetTop + video.offsetHeight;
-        const navHeight = nav.offsetHeight;
-
-        if (window.scrollY < videoBottom) {
-          sidebar.style.position = 'absolute';
-          sidebar.style.top = (videoBottom + 20) + 'px';
-          sidebar.style.left = '2rem';
-          sidebar.style.transform = 'none';
-        } else {
-          sidebar.style.position = 'fixed';
-          sidebar.style.top = (navHeight + 20) + 'px';
-          sidebar.style.left = '2rem';
-          sidebar.style.transform = 'none';
-        }
-      };
-
-      window.addEventListener('scroll', updateSidebar);
-      updateSidebar(); // initial call
-    }, 100); // wait for nav to load
   </script>
 </body>
 </html>
