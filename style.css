@@ -129,6 +129,7 @@ input[type="image"],
   font-size: clamp(3rem, 5vw, 5.5rem);
   margin-bottom: -10px;
   letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 
 .hero h2 {
@@ -140,6 +141,7 @@ input[type="image"],
   margin-bottom: 5rem;
   font-size: 1.5rem;
   color: #444444;
+  white-space: nowrap;
 }
 
 .content-section {
