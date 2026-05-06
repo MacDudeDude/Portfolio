@@ -12,6 +12,13 @@
       const link = document.createElement('a');
       link.href = `#${heading.id}`;
       link.textContent = heading.textContent;
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById(heading.id)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
       sidebar.appendChild(link);
     });
 
