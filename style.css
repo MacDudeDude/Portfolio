@@ -417,3 +417,9 @@ input[type="image"],
 .sidebar a.active::before {
   background-image: url('Graphics/Misc/HandOpen.gif');
 }
+
+.game-embed-wrapper {
+  margin-top: 1rem;
+  width: 100%;
+  aspect-ratio: 16 / 2;
+}

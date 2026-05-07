@@ -45,13 +45,13 @@
 <body>
 	<div id="gameContainer">
 		<canvas id="unity-canvas" width="1600" height="200" data-pixel-art="true"></canvas>
-		<script src="Build/TestWebBuild.loader.js"></script>
+		<script src="Build/BrotliWithBackup.loader.js"></script>
 		<script>
 			var canvas = document.querySelector("#unity-canvas");
 			var config = {
-				dataUrl: "Build/TestWebBuild.data",
-				frameworkUrl: "Build/TestWebBuild.framework.js",
-				codeUrl: "Build/TestWebBuild.wasm",
+				dataUrl: "Build/BrotliWithBackup.data.unityweb",
+				frameworkUrl: "Build/BrotliWithBackup.framework.js.unityweb",
+				codeUrl: "Build/BrotliWithBackup.wasm.unityweb",
 				streamingAssetsUrl: "StreamingAssets",
 				companyName: "DefaultCompany",
 				productName: "PortfolioFooter",
