@@ -58,7 +58,7 @@
           <div class="project-divider"></div>
     <section class="content-section">
       <h3>Networking</h3>
-      <p>It uses a custom networking manager in conjuction with Facepunch.Steamworks to allow for lobbies of up to 200 players.  Player data is sent based on a tick system and interpolated between ticks.  All traps are synced with a single timer to keep bandwith low.</p>
+      <p>I made a custom networking manager that uses Facepunch.Steamworks, allowing for mutliplayer lobbies of up to 200 players.  Player data is sent based on a tick system and interpolated between ticks.  All traps are synced with a single timer to keep bandwith low.</p>
 
       <h3>Custom Level Editor</h3>
       <p>Since players had to send their levels during the game, I used custom serialization for really small file sizes.  This had the added benifit in making downloads and uploads to the steam workshop really fast.</p>
@@ -77,6 +77,14 @@
       <h3>Audio Manager</h3>
       <p>I faced a problem with audio quickly, lots of traps with varying timing quickly reached the audio playback limit.  My solution was an audio manager that essentially keeps track of currently playing audio sources.  When it recieves a call to play a sound, it checks if that sound is already playing.  If it is, it checks variables such as distance, the audio clip length, and the time left on the currently playing clip.  Then it decides whether to ignore the request or play it and stop the old one.  The result is tons of traps and a variety of sounds with zero clipping.</p>
     </section>
+
+    <div class="normal-section-heading" id="challenges">Challenges</div>
+          <div class="project-divider"></div>
+          <section class="content-section">
+      <h3>Networking</h3>
+      <p>Hi</p>
+    </section>
+        
 
   </div>
 
