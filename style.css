@@ -419,6 +419,7 @@ input[type="image"],
 }
 
 .game-embed-wrapper {
+  position: relative;
   margin-top: 1rem;
   width: 100%;
   aspect-ratio: 16 / 2;
