@@ -5,8 +5,7 @@
 }
 
 :root {
-  --cursor-frame-1: url('Graphics/Cursors/Cursor_Default_1.png') 8 8, auto;
-  --cursor-frame-2: url('Graphics/Cursors/Cursor_Default_2.png') 8 8, auto;
+  cursor: auto;
 }
 
 @keyframes fadeInUp {
@@ -25,14 +24,6 @@
   to   { opacity: 1; }
 }
 
-@keyframes cursor-animate {
-  0%, 100% {
-    cursor: var(--cursor-frame-1);
-  }
-  50% {
-    cursor: var(--cursor-frame-2);
-  }
-}
 
 html {
   scroll-behavior: smooth;
