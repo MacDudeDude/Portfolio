@@ -1,10 +1,11 @@
 class Project {
-  constructor(title, description, Graphics, backgroundGraphics, link) {
+  constructor(title, description, Graphics, backgroundGraphics, link, tag = '') {
     this.title = title;
     this.description = description;
     this.Graphics = Graphics;
     this.backgroundGraphics = backgroundGraphics;
     this.link = link;
+    this.tag = tag;
   }
 
   render() {
@@ -30,6 +31,7 @@ class Project {
     const descriptionWithLineBreaks = this.description.replace(/\n/g, '<br>');
     info.innerHTML = `
       <h2>${this.title}</h2>
+      ${this.tag ? `<p class="project-tag">${this.tag}</p>` : ''}
       <p>${descriptionWithLineBreaks}</p>
     `;
 
@@ -101,8 +103,8 @@ class ProjectsManager {
     this.projects = projects;
   }
 
-  addProject(title, description, Graphics, backgroundGraphics = []) {
-    this.projects.push(new Project(title, description, Graphics, backgroundGraphics));
+  addProject(title, description, Graphics, backgroundGraphics = [], link = '', tag = '') {
+    this.projects.push(new Project(title, description, Graphics, backgroundGraphics, link, tag));
   }
 
   render(containerId) {
@@ -122,7 +124,7 @@ class ProjectsManager {
 const projectsManager = new ProjectsManager([
   new Project(
     'Speed Creators',
-    'A multiplayer party platformer for 2-200 players, where everyone builds one piece of the final level before racing through it.\n\nIn game level editor.  Heavily optimized audio manager and object pooling.  Custom networking solution using Facepunch.Steamworks.',
+    'A multiplayer party platformer for 2-200 players, where everyone builds one piece of the final level before racing through it.\n\nIn game level editor.  Optimized audio manager and object pooling.  Custom networking solution using Facepunch.Steamworks.',
     [
       'Graphics/Projects/SpeedCreators/Fighting.mp4',
       'Graphics/Projects/SpeedCreators/LevelBuilding.mp4',
@@ -131,7 +133,8 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking1.gif',
       'Graphics/Peekings/Peeking2.gif',
     ],
-    'speed-creators.html'
+    'speed-creators.html',
+    'Multiplayer / Unity / Steam'
   ),
   new Project(
     'Skyrail Rush',
@@ -144,7 +147,8 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking3.gif',
       'Graphics/Peekings/Peeking4.gif',
     ],
-    'https://macdudedude.itch.io/skyrail-rush'
+    'https://macdudedude.itch.io/skyrail-rush',
+    'Boss Rush FPS / Unity / Game Jam'
   ),
   new Project(
     'Strato',
@@ -157,11 +161,12 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking5.gif',
       'Graphics/Peekings/Peeking6.gif',
     ],
-    'https://macdudedude.itch.io/cloudsomethingtesting'
+    'https://macdudedude.itch.io/cloudsomethingtesting',
+    '3D Platform Fighter / Unity / Group Capstone'
   ),
   new Project(
     'Spider Controller',
-    'A procedural spider controller that smoothly walks on any terrain.  Made in 2 weeks for the Acerola Jam 0.\n\nUsing inverse kinematics with unity phyiscs casts to position the body and limbs accordingly.',
+    'A procedural spider controller that smoothly walks on any terrain.  Made in 2 weeks for the Acerola Jam 0.\n\nUsing inverse kinematics with unity phyiscs casts to position the body and limbs.',
     [
       'Graphics/Projects/SpiderController/SpiderWalking.mp4',
       'Graphics/Projects/SpiderController/SpiderActive.mp4',
@@ -170,7 +175,8 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking7.gif',
       'Graphics/Peekings/Peeking8.gif',
     ],
-    'https://macdudedude.itch.io/spider-stuff'
+    'https://macdudedude.itch.io/spider-stuff',
+    'Inverse Kinematics / Unity / Game Jam'
   ),
 ]);
 

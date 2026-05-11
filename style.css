@@ -71,7 +71,7 @@ input[type="image"],
   display: flex;
   justify-content: center;
   gap: 3rem;
-  padding: 1rem 0 2rem;
+  margin: 1rem 0 2rem;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
@@ -158,6 +158,16 @@ input[type="image"],
   height: 100%;
   object-fit: cover;
   display: block;
+
+  		image-rendering: optimizeSpeed;
+			image-rendering: -webkit-crisp-edges;
+			image-rendering: -moz-crisp-edges;
+			image-rendering: -o-crisp-edges;
+			image-rendering: crisp-edges;
+			image-rendering: -webkit-optimize-contrast;
+			image-rendering: optimize-contrast;
+			image-rendering: pixelated;
+			-ms-interpolation-mode: nearest-neighbor;
 }
 
 .hero {
@@ -264,7 +274,23 @@ input[type="image"],
 
 .project-info h2 {
   font-size: 2.7rem;
-  margin-bottom: 0rem;
+  margin-top: -0.5rem;
+}
+
+.project-info .project-tag {
+  margin: 0.5rem 0 0rem;
+  font-size: 1rem;
+  color: #666666;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-info .project-tag {
+  margin: 0rem 0 1rem;
+  font-size: 1rem;
+  color: #666666;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .project-info p {
