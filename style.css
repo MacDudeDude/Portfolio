@@ -118,6 +118,8 @@ input[type="image"],
 .site-foot-right {
   display: flex;
   gap: 3rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .site-foot a {
