@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="icon" href="Graphics/Misc/Favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
@@ -7,100 +8,151 @@
   <title>Alexander Blocker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div>
-    <div id="nav-placeholder"></div>
-  
     <div class="page">
-    <a class="video-link" href="https://store.steampowered.com/app/1745860/Speed_Creators/" role="link">
-      <div class="video-container">
-        <video autoplay muted loop>
-          <source src="Graphics/Projects/SpeedCreators/Fighting.mp4" type="video/mp4">
-        </video>
-        <img class="video-logo" src="Graphics/Projects/SpeedCreators/LibraryLogo.png" alt="Logo" width="30%">
-      </div>
-    </a>
-    
-    <nav class="sidebar" id="sidebar"></nav>
-  <div class="page-shell-project-page">
+      <div id="nav-placeholder"></div>
 
-    <div>
-        <header class="hero">
-        <h2>Unity / 2025 - 2026 / Steam <a href="https://store.steampowered.com/app/1745860/Speed_Creators/" target="_blank"><img src="Graphics/Icons/SteamIcon.gif" style="height: 1.25em; vertical-align: middle;"></a></h2>
-        <p1>"Speed Creators is an online multiplayer platformer where all players build a level, the game stiches each level together, and everyone races through it all at once"</p1>
-        </header>
-      </div>
-
-    <div class="normal-section-heading" id="about">About</div>
-          <div class="project-divider"></div>
-    <section class="content-section">
-      <p>The idea behind this game came from a game jam.  I was playing a random submission and the level editor they had, which used an image where colors corresponded to specific objects, gave me the idea for a .io style game where you could quickly draw a level and make your friends race through it.  I wanted to use Unity so I just scrapped the web idea.  And I forgot where the end gameplay concept of seperate levels stiched together came from.</p>
-      <p>-</p>
-      <p>I started working on this project in 2022, but work was very infrequent until 2025 where I really began adding and finishing features before the full release.  Work was lonely, besides paying someone for original music.  </p>
-    </section>
-
-  <div class="grid-container">
-    <div class="project-thumb">
-      <div class="project-thumb-background" style="background-image: url('Graphics/Peekings/PeekingSC1.gif');"></div>
-      <video autoplay muted loop playsinline poster="Graphics/Misc/VideoPlaceholder.gif">
-        <source src="Graphics/Projects/SpeedCreators/microtrailer.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="project-thumb">
-      <div class="project-thumb-background" style="background-image: url('Graphics/Peekings/PeekingSC2.gif');"></div>
-      <video autoplay muted loop playsinline poster="Graphics/Misc/VideoPlaceholder.gif">
-        <source src="Graphics/Projects/SpeedCreators/Racing.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
-    <div class="normal-section-heading" id="systems">Systems</div>
-          <div class="project-divider"></div>
-    <section class="content-section">
-      <h3>Networking</h3>
-      <p>I made a custom networking manager that uses Facepunch.Steamworks, allowing for mutliplayer lobbies of up to 200 players.  Player data is sent based on a tick system and interpolated between ticks.  All traps are synced with a single timer to keep bandwith low.</p>
-
-      <h3>Custom Level Editor</h3>
-      <p>Since players had to send their levels during the game, I used custom serialization for really small file sizes.  This had the added benifit in making downloads and uploads to the steam workshop really fast.</p>
-
-      <div class="grid-container">
-        <div class="project-image">
-          <video autoplay muted loop playsinline poster="Graphics/Misc/VideoPlaceholder.gif">
-          <source src="Graphics/Projects/SpeedCreators/LevelBuilding.mp4" type="video/mp4">
+      <a class="video-link" href="https://store.steampowered.com/app/1745860/Speed_Creators/" role="link">
+        <div class="video-container">
+          <video autoplay muted loop>
+            <source src="Graphics/Projects/SpeedCreators/Fighting.mp4" type="video/mp4">
           </video>
+          <img class="video-logo" src="Graphics/Projects/SpeedCreators/LibraryLogo.png" alt="Logo" width="30%">
         </div>
+      </a>
+
+      <nav class="sidebar" id="sidebar"></nav>
+      <div class="page-shell-project-page">
+
+        <div>
+          <header class="hero">
+            <h2>Unity / 2025 - 2026 / Steam <a href="https://store.steampowered.com/app/1745860/Speed_Creators/"
+                target="_blank"><img src="Graphics/Icons/SteamIcon.gif"
+                  style="height: 1.25em; vertical-align: middle;"></a></h2>
+            <p1>"Speed Creators is an online multiplayer platformer where all players build a level, the game stiches
+              each level together, and everyone races through it all at once"</p1>
+          </header>
+        </div>
+
+        <div class="normal-section-heading" id="about">About</div>
+        <div class="project-divider"></div>
+        <section class="content-section">
+          <p>The general idea actually came from a game jam, but not mine. I was playing a random submission that had a
+            built in level editor.
+            But it was just an editable image where colors corresponded to specific objects when you loaded it. It gave
+            me the idea for a .io style
+            game where you could quickly draw a level and make your friends race through it. I wanted to use Unity so I
+            just scrapped the web idea. And I forgot where the end gameplay concept of seperate levels stiched together
+            came from.</p>
+          <p>-</p>
+          <p>I started working on this project in 2022, but work was very infrequent until 2025 where I really began
+            adding and finishing features before the full release. Work was lonely, besides paying someone for original
+            music. </p>
+        </section>
+
+        <div class="grid-container">
+          <div class="project-thumb">
+            <div class="project-thumb-background" style="background-image: url('Graphics/Peekings/PeekingSC1.gif');">
+            </div>
+            <video autoplay muted loop playsinline poster="Graphics/Misc/VideoPlaceholder.gif">
+              <source src="Graphics/Projects/SpeedCreators/microtrailer.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-thumb">
+            <div class="project-thumb-background" style="background-image: url('Graphics/Peekings/PeekingSC2.gif');">
+            </div>
+            <video autoplay muted loop playsinline poster="Graphics/Misc/VideoPlaceholder.gif">
+              <source src="Graphics/Projects/SpeedCreators/Racing.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="normal-section-heading" id="systems">Systems</div>
+        <div class="project-divider"></div>
+        <section class="content-section">
+          <h3>Networking</h3>
+          <p>I made a custom networking manager that uses Facepunch.Steamworks, allowing for mutliplayer lobbies of up
+            to 200 players. Player data is sent based on a tick system and interpolated between ticks. All traps are
+            synced with a single timer to keep bandwith low.</p>
+
+          <h3>Custom Level Editor</h3>
+          <p>Since players had to send their levels during the game, I used custom serialization for really small file
+            sizes. This had the added benifit in making downloads and uploads to the steam workshop really fast.</p>
+
+          <div class="grid-container">
+            <div class="project-image">
+              <video autoplay muted loop playsinline poster="Graphics/Misc/VideoPlaceholder.gif">
+                <source src="Graphics/Projects/SpeedCreators/LevelBuilding.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <h3>Audio Manager</h3>
+          <p>I faced a problem with audio quickly, lots of traps with varying timing quickly reached the audio playback
+            limit. My solution was an audio manager that essentially keeps track of currently playing audio sources.
+            When it recieves a call to play a sound, it checks if that sound is already playing. If it is, it checks
+            variables such as distance, the audio clip length, and the time left on the currently playing clip. Then it
+            decides whether to ignore the request or play it and stop the old one. The result is tons of traps and a
+            variety of sounds with zero clipping.</p>
+        </section>
+
+        <div class="normal-section-heading" id="challenges">Challenges</div>
+        <div class="project-divider"></div>
+        <section class="content-section">
+          <h3>Networking Bugs</h3>
+          <p>The biggest challenge I had when creating this game was the networking, especially fixing the bugs that
+            only happened in rare situations. Using just steamworks to handle connections meant I couldn't test it from
+            a single computer. Being forced to test every change with two computers was quite a slog.</p>
+          <p>-</p>
+          <p>To aid in this process I tried to make the networked code as clear as possible, making it easier to
+            determine where the source of a bug would be. And any explicit errors would be exposed in game so I could
+            see the exact error log. Overall though, I think things could have been easier had I used an out of the box
+            networking solution/manager instead. But I will say, managing packets is very fun.</p>
+
+          <h3>Refactoring</h3>
+          <p>As mentioned earlier, a good chunk of the code and systems were done in 2022, back when I was still pretty
+            new to coding in general. So a lot of the systems and overall project structure was, to put it lightly, very
+            bad. I didn't want to spend even more time on this project, so a big challenge was finding a balance between
+            refactoring systems and just finishing.</p>
+          <p>-</p>
+          <p>What helped was taking a few days to plan which systems really needed to be rewritten, and
+            which ones could just do with some minor changes. I'm pretty happy with how it turned out, but a part of
+            me still wants to completely rewrite the game from scratch.</p>
+
+          <h3>Preformance</h3>
+          <p>Since I wanted huge lobbies with potentially over a hundred levels, I needed to keep preformance in mind
+            and it's something I tested many times. Traps are culled and disabled when offscreen, and all projectiles
+            are pooled. Particle effects are emitted using a particle manager. Tiles use a single respective tilemap,
+            set all at once.</p>
+        </section>
+
+        <div class="normal-section-heading" id="reflection">Reflection</div>
+        <div class="project-divider"></div>
+        <section class="content-section">
+          <p>In the end, I had a lot of fun making this project and I learned an incredible amount as well. I'm really
+            happy with how the final project turned out, and I only have two regrets.
+          </p>
+          <p>-</p>
+          <p>I wish I spent some more time marketing. By the end I just wanted to release it, so I kinda
+            neglected it.
+          </p>
+          <p>-</p>
+          <p>And I wish I could do it again. (no not really)</p>
+        </section>
+
       </div>
+      <br><br><br><br>
+      <div class="footer-peeking"> <img src="Graphics/Peekings/FooterPeekingSC.gif" type="Image/gif"></img> </div>
+    </div>
 
-      <h3>Audio Manager</h3>
-      <p>I faced a problem with audio quickly, lots of traps with varying timing quickly reached the audio playback limit.  My solution was an audio manager that essentially keeps track of currently playing audio sources.  When it recieves a call to play a sound, it checks if that sound is already playing.  If it is, it checks variables such as distance, the audio clip length, and the time left on the currently playing clip.  Then it decides whether to ignore the request or play it and stop the old one.  The result is tons of traps and a variety of sounds with zero clipping.</p>
-    </section>
+    <div id="foot-placeholder" style="position: sticky; bottom: 0;"></div>
 
-    <div class="normal-section-heading" id="challenges">Challenges</div>
-          <div class="project-divider"></div>
-          <section class="content-section">
-            <h3>Networking Bugs</h3>
-            <p>The biggest challenge I had when creating this game was the networking, especially fixing the bugs that only happened in rare situations.  Using just steamworks to handle connections meant I couldn't test it from a single computer.  Being forced to test every change with two computers was quite a slog.</p>
-            <p>-</p>
-            <p>To aid in this process I tried to make the networked code as clear as possible, making it easier to determine where the source of a bug would be.  And any explicit errors would be exposed in game so I could see the exact error log.  Overall though, I think things could have been easier had I used an out of the box networking solution/manager instead.  But I will say, managing packets is very fun.</p>
-
-            <h3>Optimizations</h3>
-            <p>Since I wanted huge lobbies with potentially over a hundred levels, I needed to keep preformance in mind.  Traps are culled and disabled when offscreen, and all projectiles are pooled.  Particle effects are emitted using a particle manager.  Tiles use a single respective tilemap, set all at once.</p>
-    </section>
-
-    <div class="normal-section-heading" id="reflection">Reflection</div>
-          <div class="project-divider"></div>
-          <section class="content-section">
-      <p>Reflections here</p>
-    </section>
-
-  </div>
-  </div>
-  
-  <div id="foot-placeholder" style="position: sticky; bottom: 0;"></div>
-
-  <script src="foot-loader.js"></script>
-  <script src="cursor.js"></script>
-  <script src="nav-loader.js"></script>
-  <script src="sidebar.js"></script>
+    <script src="foot-loader.js"></script>
+    <script src="cursor.js"></script>
+    <script src="nav-loader.js"></script>
+    <script src="sidebar.js"></script>
 </body>
+
 </html>
