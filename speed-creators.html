@@ -71,9 +71,6 @@
         </div>
       </div>
 
-      <h3>Optimizations</h3>
-      <p>Since I wanted huge lobbies with potentially over a hundred levels, I needed to keep preformance in mind.  Traps are culled and disabled when offscreen, and all projectiles are pooled.  Particle effects are emitted using a particle manager.</p>
-
       <h3>Audio Manager</h3>
       <p>I faced a problem with audio quickly, lots of traps with varying timing quickly reached the audio playback limit.  My solution was an audio manager that essentially keeps track of currently playing audio sources.  When it recieves a call to play a sound, it checks if that sound is already playing.  If it is, it checks variables such as distance, the audio clip length, and the time left on the currently playing clip.  Then it decides whether to ignore the request or play it and stop the old one.  The result is tons of traps and a variety of sounds with zero clipping.</p>
     </section>
@@ -81,7 +78,19 @@
     <div class="normal-section-heading" id="challenges">Challenges</div>
           <div class="project-divider"></div>
           <section class="content-section">
-      <p>The biggest challenge I had when creating this game was the networking, especially fixing the bugs that only happened in rare situations.  I think things could have beene easier had I used a standard network manager instead.  While managing packets was fun, I'll use something more standardized in the future.</p>
+            <h3>Networking Bugs</h3>
+            <p>The biggest challenge I had when creating this game was the networking, especially fixing the bugs that only happened in rare situations.  Using just steamworks to handle connections meant I couldn't test it from a single computer.  Being forced to test every change with two computers was quite a slog.</p>
+            <p>-</p>
+            <p>To aid in this process I tried to make the networked code as clear as possible, making it easier to determine where the source of a bug would be.  And any explicit errors would be exposed in game so I could see the exact error log.  Overall though, I think things could have been easier had I used an out of the box networking solution/manager instead.  But I will say, managing packets is very fun.</p>
+
+            <h3>Optimizations</h3>
+            <p>Since I wanted huge lobbies with potentially over a hundred levels, I needed to keep preformance in mind.  Traps are culled and disabled when offscreen, and all projectiles are pooled.  Particle effects are emitted using a particle manager.  Tiles use a single respective tilemap, set all at once.</p>
+    </section>
+
+    <div class="normal-section-heading" id="reflection">Reflection</div>
+          <div class="project-divider"></div>
+          <section class="content-section">
+      <p>Reflections here</p>
     </section>
 
   </div>

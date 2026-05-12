@@ -162,7 +162,7 @@ const projectsManager = new ProjectsManager([
       'Graphics/Peekings/Peeking6.gif',
     ],
     'https://macdudedude.itch.io/cloudsomethingtesting',
-    '3D Platform Fighter / Unity / Group Capstone'
+    '3D Platform Fighter / Unity / Senior Capstone'
   ),
   new Project(
     'Spider Controller',
