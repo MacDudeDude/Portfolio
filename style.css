@@ -118,7 +118,7 @@ input[type="image"],
 .site-foot-left,
 .site-foot-right {
   display: flex;
-  gap: 3rem;
+  gap: clamp(0.5rem, 1.5rem, 3rem);
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -158,13 +158,16 @@ input[type="image"],
   width: 100%;
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
-.footer-peeking img{
-  width: 100%;
+.footer-peeking img {
+  width: max(100%, 1000px);
   height: 100%;
   object-fit: cover;
   display: block;
+  flex-shrink: 0;
 }
 
 .hero {
