@@ -512,10 +512,24 @@ a.active {
   order: 1;
 }
 
+.about-grid-img-container {
+  display: flex;
+  justify-content: left;
+}
+
+.about-grid-img-container-left {
+  display: flex;
+  justify-content: right;
+}
+
 @media (max-width: 828px) {
   .move-below {
     text-align: left;
     order: -1;
   }
 
+  .about-grid-img-container-left,
+  .about-grid-img-container {
+    justify-content: center;
+  }
 }
