@@ -505,6 +505,7 @@ a.active {
   gap: 2rem;
   align-items: center;
   margin: 0 1rem 2rem;
+  overflow: hidden;
 }
 
 .move-below {
@@ -531,5 +532,9 @@ a.active {
   .about-grid-img-container-left,
   .about-grid-img-container {
     justify-content: center;
+  }
+
+  .about-grid-img-container-left img {
+    width: 80%;
   }
 }
