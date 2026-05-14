@@ -538,3 +538,36 @@ a.active {
     width: 80%;
   }
 }
+
+.contact-links{
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.contact-links a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.contact-links a::after {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-image: url('Graphics/Misc/HandClickRight.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.5);
+}
+
+.contact-links a:hover::after {
+  opacity: 1;
+}
