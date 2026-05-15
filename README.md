@@ -1,1 +1,1 @@
-https://macdudedude.github.io/Portfolio/index.html
+https://macdudedude.github.io/Portfolio
