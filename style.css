@@ -598,15 +598,6 @@ a.active {
   color: white;
 }
 
-.project-stack-card-holder:last-child:active{
-  pointer-events: none;
-  z-index: 1;
-
-   .project-stack-card {
-    transform: translate(12vw, -3.5vw);
-   }
-}
-
 .project-stack-card {
   position: absolute;
   top: 0;
@@ -620,6 +611,10 @@ a.active {
 .project-stack-card-holder:hover .project-stack-card {
   transform: translateY(-3.5vw);
   z-index: 1;
+
+  .project-stack-content{
+    visibility: visible;
+  }
 }
 
 .project-stack-bg {
@@ -640,6 +635,7 @@ a.active {
   align-items: center;
   justify-content: center;
   text-align: center;
+  visibility: hidden;
 }
 
 .project-stack-content h2 {
@@ -659,7 +655,7 @@ a.active {
 .project-stack-content p {
   font-size: 1cqw;
   color: #000000;
-  padding: 0 2.5em;
+  padding: 0 1em;
 }
 
 .project-stack-date {
