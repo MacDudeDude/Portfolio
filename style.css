@@ -539,7 +539,7 @@ a.active {
   }
 }
 
-.contact-links{
+.contact-links {
   display: flex;
   gap: 3rem;
   justify-content: center;
@@ -570,4 +570,86 @@ a.active {
 
 .contact-links a:hover::after {
   opacity: 1;
+}
+
+
+
+
+
+.projects-display-wrapper {
+  width: 100%;
+  overflow: visible;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+.projects-cards-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.project-stack-card-holder {
+  aspect-ratio: 42 / 59;
+  width: 25%;
+  font-size: 1.4cqw;
+  position: relative;
+  overflow: visible;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: white;
+}
+
+.project-stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+}
+
+.project-stack-card-holder:hover .project-stack-card {
+  transform: translateY(-3.5vw);
+  z-index: 1;
+}
+
+.project-stack-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('Graphics/Projects/ProjectCard.gif');
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.project-stack-content {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+}
+
+.project-stack-content h2 {
+  padding: 0.5em;
+  font-size: 1.5cqw;
+  color: #000000;
+}
+
+.project-stack-content p {
+  font-size: 1cqw;
+  color: #000000;
+  padding: 0 2em;
+}
+
+.project-stack-date {
+  position: absolute;
+  top: 0.75cqw;
+  right: 1cqw;
+  font-size: 1.25cqw;
+  font-weight: bold;
+  color: #000000;
 }
