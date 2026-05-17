@@ -1,5 +1,14 @@
 const projects = [
   {
+    title: "Survive 5 Minutes",
+    tagline: "Unity / 5 Hours",
+    description: "Survive 5 Minutes",
+    link: "https://macdudedude.itch.io/5-minutes",
+    image: "Graphics/Projects/Cards/S5M.gif",
+    date: "September 2025",
+    score: "5",
+  },
+  {
     title: "Airport Insecurity",
     tagline: "Unity / 3 Days",
     description: "find bombs hidden within luggage",
@@ -25,15 +34,6 @@ const projects = [
     image: "Graphics/Projects/Cards/ProjectCard.gif",
     date: "February 2025",
     score: "6",
-  },
-  {
-    title: "Survive 5 Minutes",
-    tagline: "Unity / 5 Hours",
-    description: "Survive 5 Minutes",
-    link: "https://macdudedude.itch.io/5-minutes",
-    image: "Graphics/Projects/Cards/ProjectCard.gif",
-    date: "September 2025",
-    score: "5",
   },
   {
     title: "Ants Versus the (bug) World",
@@ -98,34 +98,78 @@ const projects = [
     date: "August 2021",
     score: "3",
   },
-  {
-    title: "",
-    tagline: "",
-    description: "",
-    link: "https://macdudedude.itch.io/",
-    image: "Graphics/Projects/Cards/CardCover.gif",
-    date: "",
-    score: "None",
-  },
 ];
 
 const projectsContainer = document.getElementById("projects-cards");
-projects.forEach(project => {
-  projectsContainer.innerHTML += `
-    <a class="project-stack-card-holder" href="${project.link}" target="_blank" rel="noopener noreferrer">
+const controlsContainer = document.getElementById("projects-controls");
+
+projects.forEach((p, i) => {
+  if (p._id === undefined) p._id = i;
+});
+
+function createProjectCardHTML(project) {
+  return `
+    <a class="project-stack-card-holder" data-id="${project._id}" href="${project.link}" target="_blank" rel="noopener noreferrer">
       <div class="project-stack-card">
-      <div class="project-stack-bg" style="background-image: url('${project.image}')"></div>
+        <div class="project-stack-bg" style="background-image: url('${project.image}')"></div>
         <div class="project-stack-bg" style="background-image: url(Graphics/Projects/Cards/Numbers/${project.score}.gif)"></div>
-        <span class="project-stack-date">${project.date}</span>
         <div class="project-stack-content">
-        <h2>${project.title}</h2>
-        <p1>${project.tagline}</p1>
-        <p>${project.description}</p>
+          <div class="project-stack-date">${project.date}</div>
+          <h2>${project.title}</h2>
+          <p1>${project.tagline}</p1>
+          <p>${project.description}</p>
         </div>
       </div>
     </a>
   `;
-});
+}
+
+function renderProjects(list) {
+  const oldRects = new Map();
+  document.querySelectorAll('.project-stack-card-holder').forEach(el => {
+    const id = el.getAttribute('data-id');
+    if (id) oldRects.set(id, el.getBoundingClientRect());
+  });
+  
+  projectsContainer.innerHTML = '';
+  list.forEach(project => {
+    projectsContainer.innerHTML += createProjectCardHTML(project);
+  });
+
+  projectsContainer.innerHTML += `
+<a class="project-stack-card-holder" href="https://macdudedude.itch.io/" target="_blank" rel="noopener noreferrer">
+  <div class="project-stack-card">
+    <div class="project-stack-bg" style="background-image: url(Graphics/Projects/Cards/CardCover.gif)"></div>
+  </div>
+</a>
+`;
+
+  updateCardLayout();
+
+  const newEls = Array.from(document.querySelectorAll('.project-stack-card-holder'));
+  newEls.forEach(el => {
+    const id = el.getAttribute('data-id');
+    const newRect = el.getBoundingClientRect();
+    const oldRect = oldRects.get(id);
+    if (oldRect) {
+      const dx = oldRect.left - newRect.left;
+      const dy = oldRect.top - newRect.top;
+      if (dx !== 0 || dy !== 0) {
+        el.style.transform = `translate(${dx}px, ${dy}px)`;
+        // force reflow
+        el.getBoundingClientRect();
+        el.style.transition = 'transform 550ms cubic-bezier(0.2,0,0,1)';
+        requestAnimationFrame(() => {
+          el.style.transform = '';
+        });
+        el.addEventListener('transitionend', function te() {
+          el.style.transition = '';
+          el.removeEventListener('transitionend', te);
+        });
+      }
+    }
+  });
+}
 
 function updateCardLayout() {
   const holders = document.querySelectorAll(".project-stack-card-holder");
@@ -152,5 +196,81 @@ function updateCardLayout() {
   });
 }
 
-updateCardLayout();
+function parseProjectDate(dateString) {
+  if (!dateString) return 0;
+  const months = {
+    january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11
+  };
+  const parts = dateString.trim().split(/\s+/);
+  if (parts.length === 2) {
+    const month = months[parts[0].toLowerCase()];
+    const year = parseInt(parts[1], 10);
+    if (month !== undefined && !isNaN(year)) {
+      return new Date(year, month, 1).getTime();
+    }
+  }
+
+  const fallback = new Date(dateString);
+  return isNaN(fallback.getTime()) ? 0 : fallback.getTime();
+}
+
+function parseProjectScore(scoreString) {
+  const n = parseFloat(scoreString);
+  return isNaN(n) ? -Infinity : n;
+}
+
+function sortByDateDesc() {
+  projects.sort((a, b) => parseProjectDate(b.date) - parseProjectDate(a.date));
+  renderProjects(projects);
+}
+
+function sortByScoreDesc() {
+  projects.sort((a, b) => parseProjectScore(b.score) - parseProjectScore(a.score));
+  renderProjects(projects);
+}
+
+function shuffleProjects() {
+  for (let i = projects.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [projects[i], projects[j]] = [projects[j], projects[i]];
+  }
+  renderProjects(projects);
+}
+
+function clearActiveButtons() {
+  const btns = controlsContainer.querySelectorAll('.project-filter-btn');
+  btns.forEach(b => b.classList.remove('active'));
+}
+
+function setupControls() {
+  if (!controlsContainer) return;
+
+  controlsContainer.innerHTML = `
+  <button class="project-filter-btn" data-action="date">
+  <img src="Graphics/Projects/Cards/Buttons/TimeFilter.gif" alt="Sort by date"/>
+  </button>
+  <button class="project-filter-btn" data-action="score">
+  <img src="Graphics/Projects/Cards/Buttons/RatingFilter.gif" alt="Sort by score" />
+  </button>
+  <button class="project-filter-btn" data-action="shuffle">
+  <img src="Graphics/Projects/Cards/Buttons/RandomFilter.gif" alt="Shuffle projects" />
+  </button>
+  `;
+
+  controlsContainer.addEventListener('click', (e) => {
+    const btn = e.target.closest('.project-filter-btn');
+    if (!btn) return;
+    const action = btn.getAttribute('data-action');
+    clearActiveButtons();
+    btn.classList.add('active');
+    if (action === 'date') sortByDateDesc();
+    else if (action === 'score') sortByScoreDesc();
+    else if (action === 'shuffle') shuffleProjects();
+  });
+}
+
+setupControls();
+renderProjects(projects);
+
 window.addEventListener("resize", updateCardLayout);
