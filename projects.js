@@ -85,8 +85,8 @@ const projects = [
     tagline: "Unity / 3 Days",
     description: "simple chess in a pop art style",
     link: "https://macdudedude.itch.io/chessfighter",
-    image: "Graphics/Projects/Cards/ProjectCard.gif",
-    date: "August 2021",
+    image: "Graphics/Projects/Cards/PopChess.gif",
+    date: "May 2021",
     score: "2",
   },
   {
@@ -95,7 +95,7 @@ const projects = [
     description: "prepare a snack for your child",
     link: "https://macdudedude.itch.io/demon-child",
     image: "Graphics/Projects/Cards/ProjectCard.gif",
-    date: "August 2021",
+    date: "March 2021",
     score: "3",
   },
 ];
@@ -130,19 +130,18 @@ function renderProjects(list) {
     const id = el.getAttribute('data-id');
     if (id) oldRects.set(id, el.getBoundingClientRect());
   });
-  
-  projectsContainer.innerHTML = '';
+
   list.forEach(project => {
     projectsContainer.innerHTML += createProjectCardHTML(project);
   });
 
   projectsContainer.innerHTML += `
-<a class="project-stack-card-holder" href="https://macdudedude.itch.io/" target="_blank" rel="noopener noreferrer">
-  <div class="project-stack-card">
-    <div class="project-stack-bg" style="background-image: url(Graphics/Projects/Cards/CardCover.gif)"></div>
-  </div>
-</a>
-`;
+    <a class="project-stack-card-holder" href="https://macdudedude.itch.io/" target="_blank" rel="noopener noreferrer">
+      <div class="project-stack-card">
+      <div class="project-stack-bg" style="background-image: url(Graphics/Projects/Cards/CardCover.gif)"></div>
+      </div>
+    </a>
+    `;
 
   updateCardLayout();
 
@@ -156,7 +155,6 @@ function renderProjects(list) {
       const dy = oldRect.top - newRect.top;
       if (dx !== 0 || dy !== 0) {
         el.style.transform = `translate(${dx}px, ${dy}px)`;
-        // force reflow
         el.getBoundingClientRect();
         el.style.transition = 'transform 550ms cubic-bezier(0.2,0,0,1)';
         requestAnimationFrame(() => {
