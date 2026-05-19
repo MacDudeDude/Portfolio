@@ -131,6 +131,7 @@ function renderProjects(list) {
     if (id) oldRects.set(id, el.getBoundingClientRect());
   });
 
+  projectsContainer.innerHTML = '';
   list.forEach(project => {
     projectsContainer.innerHTML += createProjectCardHTML(project);
   });
