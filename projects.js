@@ -157,7 +157,7 @@ function renderProjects(list) {
       if (dx !== 0 || dy !== 0) {
         el.style.transform = `translate(${dx}px, ${dy}px)`;
         el.getBoundingClientRect();
-        el.style.transition = 'transform 550ms cubic-bezier(0.2,0,0,1)';
+        el.style.transition = 'transform 400ms cubic-bezier(0.2,0,0,1)';
         requestAnimationFrame(() => {
           el.style.transform = '';
         });
