@@ -34,6 +34,19 @@
   <script src="cursor.js"></script>
   <script src="nav-loader.js"></script>
   <script src="main.js"></script>
+
+  <script>
+    (function(){
+      var key = 'myaweseomeportfoliowhichwillnevergetmeajobtbh';
+      var storageKey = 'countapi_sent_' + key;
+      try {
+        if (localStorage.getItem(storageKey)) return;
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/' + key).catch(function(){});
+        localStorage.setItem(storageKey, Date.now());
+      } catch (e) {}
+    })();
+  </script>
+
 </body>
 
 </html>
